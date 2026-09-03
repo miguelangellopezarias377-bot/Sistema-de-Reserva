@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReservaRest - Sistema Integral de Gestión</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Vista de Login -->
+  <div id="login-container" class="login-wrapper">
+    <div class="login-card">
+      <div class="brand-header">
+        <div class="brand-icon">🍽️</div>
+        <h1 class="brand-title">ReservaRest</h1>
+        <p class="brand-subtitle">Sistema integral de gestión</p>
+      </div>
+
+      <form id="login-form" class="card-body">
+        <h2>Iniciar sesión</h2>
+        <div id="login-error" class="alert alert-danger hidden"></div>
+        
+        <div class="form-group">
+          <label for="username">Usuario</label>
+          <input type="text" id="username" placeholder="Ej: admin" required autocomplete="off">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" placeholder="••••••••" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+      </form>
+
+      <div class="demo-users-box">
+        <p><strong>Usuarios demo:</strong></p>
+        <div class="demo-badge"><code>admin</code> / <code>admin123</code></div>
+        <div class="demo-badge"><code>mesero</code> / <code>mesero123</code></div>
+        <div class="demo-badge"><code>cocina</code> / <code>cocina123</code></div>
+        <div class="demo-badge"><code>despacho</code> / <code>despacho123</code></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenedor Principal Dashboard -->
+  <div id="app-container" class="app-layout hidden">
+    <!-- Overlay Móvil -->
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+    <!-- Menú Lateral -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <span class="brand-icon">🍽️</span>
+        <span class="brand-name">ReservaRest</span>
+        <button id="close-sidebar-btn" class="close-sidebar-btn">&times;</button>
+      </div>
+      <nav class="sidebar-nav" id="sidebar-nav"></nav>
+    </aside>
+
+    <!-- Área de Trabajo -->
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button id="mobile-menu-btn" class="hamburger-btn">☰</button>
+          <span id="current-view-title" class="view-header-title">Panel</span>
+        </div>
+        <div class="user-profile">
+          <span id="user-role-badge" class="badge">ADMINISTRADOR</span>
+          <span id="user-display-name" class="user-name">Administrador</span>
+          <button id="btn-logout" class="btn-logout">Salir</button>
+        </div>
+      </header>
+
+      <section id="view-content" class="content-body"></section>
+    </main>
+  </div>
+
+  <!-- Modales Dinámicos -->
+  <div id="modal-container" class="modal-backdrop hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-title">Título Modal</h3>
+        <button id="modal-close-btn" class="modal-close">&times;</button>
+      </div>
+      <div id="modal-body" class="modal-body-content"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/storage.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/modules.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
